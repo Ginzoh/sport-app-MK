@@ -9,6 +9,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  font-family: Roboto;
 }
 
 a {
@@ -20,6 +21,7 @@ body {
   margin: 0 auto;
   max-width: 1440px;
   min-width: 1024px;
+  font-family: Roboto;
   /* display: flex;
   place-items: center;
   min-width: 320px;
@@ -29,4 +31,8 @@ body {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.container {
+  display: flex;
 }

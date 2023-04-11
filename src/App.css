@@ -1,0 +1,90 @@
+h1,
+.bravo {
+  padding: 0;
+  margin: 0;
+}
+
+.bonjour {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+
+}
+
+.bravo {
+  margin-top: 41px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+
+}
+
+.mainPage {
+  padding-left: 109px;
+  padding-top: 68px
+}
+
+.firstChart {
+  margin-top: 77px;
+}
+
+.tooltip {
+  background: #E60000;
+  padding: '10px';
+  color: #fff;
+  border: none;
+  text-align: center;
+  outline: none;
+  margin-bottom: 12px;
+}
+
+.weight {
+  padding-top: 15px;
+}
+
+.calories {
+  margin-bottom: 20px;
+}
+
+.legend {
+  color: #74798C;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.firstName {
+  color: #FF0101;
+}
+
+.custom-legend {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 32px;
+  margin-bottom: 47px;
+  position: relative;
+}
+
+.custom-legend::before {
+  content: "Activité quotidienne";
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  position: absolute;
+  left: 76px;
+  top: 0;
+}
+
+
+ul li:first-child {
+  order: 1;
+}
+
+.custom-legend li {
+  list-style-type: none;
+}
