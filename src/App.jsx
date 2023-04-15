@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import './App.css'
 import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Cell, Tooltip, Legend } from "recharts";
-
+import SimpleRadarChart from './graph/RadarChart';
+import CustomPieChart from './graph/PieChart';
 
 async function fetchData(id, el = false) {
   let response;
@@ -59,7 +60,7 @@ function App() {
       <h1 className="bonjour">Bonjour <span className="firstName">{user.firstName}</span></h1>
       <p className="bravo">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       <div className="chartsContainer">
-        <BarChart width={800} height={320} data={data} barGap={8} className='barChart'>
+        <BarChart width={835} height={320} data={data} barGap={8} className='barChart'>
           <CartesianGrid
             vertical={false}
             horizontal={true}
@@ -135,7 +136,7 @@ function App() {
         </BarChart>
         <div className="lineContainer">
           <h3 className="lineTitle">Durée moyenne des sessions</h3>
-          <LineChart width={270} height={220} data={dataD} stroke="#FFFFFF" fill="#FF0000" className='linechart'>
+          <LineChart width={278} height={220} data={dataD} stroke="#FFFFFF" fill="#FF0000" className='linechart'>
             <CartesianGrid stroke='transparent' />
             <XAxis dataKey="day"
               axisLine={false} height={40} tickLine={false} tick={{ fill: "#fff", opacity: '0.5' }} />
@@ -157,6 +158,10 @@ function App() {
               strokeWidth={(index) => (index === 0 ? 1 : index * 100)} />
           </LineChart>
         </div>
+        <div className="radarContainer">
+          <SimpleRadarChart />
+        </div>
+        <CustomPieChart />
       </div>
     </section>
   )

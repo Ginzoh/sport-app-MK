@@ -101,7 +101,7 @@ ul li:first-child {
   background: #FBFBFB;
   border-radius: 5px;
   margin-top: 77px;
-  margin-bottom: 30px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
 }
 
 .lineContainer {
@@ -113,6 +113,7 @@ ul li:first-child {
 .linechart {
   /* margin-bottom: -20px; */
   margin-left: -20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
 }
 
 .tooltipLine {
@@ -126,7 +127,24 @@ ul li:first-child {
 .lineTitle {
   font-size: 15px;
   color: #fff;
+  font-weight: 500;
   margin-left: 34px;
   margin-bottom: 0;
   opacity: 0.5;
+}
+
+.radarContainer {
+  width: 258px;
+  height: 263px;
+  background-color: #282D30;
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 6px;
+}
+
+.chartsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70%;
+  gap: 30px;
 }
