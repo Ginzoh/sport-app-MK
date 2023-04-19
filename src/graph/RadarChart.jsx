@@ -1,6 +1,20 @@
+/**
+ * @file SimpleRadarChart component file.
+ * This file contains the definition of the SimpleRadarChart component and its related PropTypes.
+ */
+
 import PropTypes from 'prop-types';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
+/**
+ * CustomTick component.
+ * @function CustomTick
+ * @param {Object} props - The properties object.
+ * @param {number} props.x - x-coordinate.
+ * @param {number} props.y - y-coordinate.
+ * @param {Object} props.payload - The tick's payload.
+ * @returns {ReactElement} The CustomTick component.
+ */
 const CustomTick = ({ x, y, payload }) => {
   let textAnchor;
 
@@ -48,7 +62,13 @@ const CustomTick = ({ x, y, payload }) => {
   );
 };
 
-
+/**
+ * SimpleRadarChart component.
+ * @function SimpleRadarChart
+ * @param {Object} props - The properties object.
+ * @param {Array.<{kind: string, value: number}>} props.dataD - The data to be displayed in the radar chart.
+ * @returns {ReactElement} The SimpleRadarChart component.
+ */
 const SimpleRadarChart = ({ dataD }) => {
   return (
     <ResponsiveContainer width="100%" height="81%" style={{ backgroundColor: '#282D30' }}>
@@ -71,6 +91,9 @@ const SimpleRadarChart = ({ dataD }) => {
   );
 };
 
+/**
+ * PropTypes for the SimpleRadarChart component.
+ */
 SimpleRadarChart.propTypes = {
   dataD: PropTypes.arrayOf(
     PropTypes.shape({

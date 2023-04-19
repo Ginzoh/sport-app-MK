@@ -1,6 +1,18 @@
+/**
+ * @file CustomBarChart component file.
+ * This file contains the definition of the CustomBarChart component and its related PropTypes.
+ */
+
 import PropTypes from 'prop-types';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Cell, Tooltip, Legend } from "recharts";
 
+/**
+ * CustomBarChart component.
+ * @function CustomBarChart
+ * @param {Object} props - The properties object.
+ * @param {Array.<{day: string, kilogram: number, calories: number}>} props.data - The data to be displayed in the bar chart.
+ * @returns {ReactElement} The CustomBarChart component.
+ */
 const CustomBarChart = ({ data }) => {
   const CustomLegend = ({ payload }) => {
     return (
@@ -96,6 +108,10 @@ const CustomBarChart = ({ data }) => {
     </BarChart>
   );
 };
+
+/**
+ * PropTypes for the CustomBarChart component.
+ */
 CustomBarChart.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({

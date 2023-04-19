@@ -1,3 +1,8 @@
+/**
+ * @file CustomLineChart component file.
+ * This file contains the definition of the CustomLineChart component and its related PropTypes.
+ */
+
 import { useState } from "react";
 import PropTypes from 'prop-types';
 import {
@@ -11,6 +16,13 @@ import {
 } from "recharts";
 import CustomDot from "./CustomDot/CustomDot";
 
+/**
+ * CustomLineChart component.
+ * @function CustomLineChart
+ * @param {Object} props - The properties object.
+ * @param {Array.<{day: number, sessionLength: number}>} props.data - The data to be displayed in the line chart.
+ * @returns {ReactElement} The CustomLineChart component.
+ */
 const CustomLineChart = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(null);
   return (
@@ -53,18 +65,23 @@ const CustomLineChart = ({ data }) => {
         </linearGradient>
       </defs>
       <Line
-        type="monotone"
+        type="basis"
         dataKey="sessionLength"
         stroke="url(#lineGradient)"
         isAnimationActive={false}
+        strokeWidth={2}
         dot={<CustomDot active={false} setActiveIndex={setActiveIndex} />}
         activeDot={<CustomDot active={true} setActiveIndex={setActiveIndex} />}
       />
+
 
     </LineChart>
   );
 };
 
+/**
+ * PropTypes for the CustomLineChart component.
+ */
 CustomLineChart.propTypes = {
   data: PropTypes.arrayOf(
     PropTypes.shape({

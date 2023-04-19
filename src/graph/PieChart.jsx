@@ -1,3 +1,8 @@
+/**
+ * @file CustomPieChart component file.
+ * This file contains the definition of the CustomPieChart component and its related PropTypes.
+ */
+
 import PropTypes from 'prop-types';
 import {
   PieChart,
@@ -9,6 +14,14 @@ import {
 } from 'recharts';
 import './PieChart.css'
 
+/**
+ * CustomLabel component.
+ * @function CustomLabel
+ * @param {Object} props - The properties object.
+ * @param {Object} props.viewBox - The viewBox object.
+ * @param {number} props.value - The value to display.
+ * @returns {ReactElement} The CustomLabel component.
+ */
 const CustomLabel = (props) => {
   const { viewBox, value } = props;
   const { cx, cy } = viewBox;
@@ -20,6 +33,13 @@ const CustomLabel = (props) => {
   );
 };
 
+/**
+ * CustomLabel2 component.
+ * @function CustomLabel2
+ * @param {Object} props - The properties object.
+ * @param {Object} props.viewBox - The viewBox object.
+ * @returns {ReactElement} The CustomLabel2 component.
+ */
 const CustomLabel2 = (props) => {
   const { viewBox } = props;
   const { cx, cy } = viewBox;
@@ -52,7 +72,13 @@ const CustomLabel2 = (props) => {
   );
 };
 
-
+/**
+ * CustomPieChart component.
+ * @function CustomPieChart
+ * @param {Object} props - The properties object.
+ * @param {number} props.score - The score to be displayed as a percentage.
+ * @returns {ReactElement} The CustomPieChart component.
+ */
 const CustomPieChart = ({ score }) => {
   const percentage = Math.round(score * 100);
   const remaining = 100 - percentage;
@@ -88,6 +114,9 @@ const CustomPieChart = ({ score }) => {
   );
 };
 
+/**
+ * PropTypes for the CustomPieChart component.
+ */
 CustomPieChart.propTypes = {
   score: PropTypes.number.isRequired,
 };

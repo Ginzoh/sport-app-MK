@@ -15,6 +15,12 @@ import {
   USER_PERFORMANCE
 } from './data/data'
 
+/**
+ * Main application component.
+ * Renders the main page containing various charts and user statistics.
+ * 
+ * @component
+ */
 function App() {
   const [data, setData] = useState([]);
   const [user, setUser] = useState([]);
@@ -29,6 +35,14 @@ function App() {
     console.log(perfValues)
   }, []);
 
+  /**
+   * Fetches data from the given API endpoint or mock data based on the current environment.
+   *
+   * @async
+   * @param {number} index - The index of the data to fetch.
+   * @param {string} [type] - The type of data to fetch (e.g., activity, average-sessions, performance).
+   * @returns {Promise<Object>} A promise resolving to the fetched data.
+   */
   async function getData(index, type) {
     if (import.meta.env.VITE_REACT_APP_MOCK === 'FALSE') {
       return await fetchData(index, type);
@@ -46,6 +60,11 @@ function App() {
     }
   }
 
+  /**
+   * Loads data from the API or mock data based on the current environment and sets the state.
+   *
+   * @async
+   */
   async function loadData() {
     const actDataRaw = await getData(12, "activity");
     const userDataRaw = await getData(12);
