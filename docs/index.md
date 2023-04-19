@@ -1,4 +1,4 @@
-# Project Documentation
+# SportSee Website Project Documentation
 
 Welcome to the SportSee website project documentation. This project is built using React and showcases a Dashboard that provides an overview of a user's fitness data. The data used for this project is either mocked or fetched from a back-end API. In this documentation, you'll find information on the project structure, components used, and how to utilize the custom chart components. Use the links below to navigate to specific sections:
 
