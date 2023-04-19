@@ -24,7 +24,7 @@ The ``StatsDisplay`` component accepts the following prop:
 
 * keyData: An object containing key nutritional information for the user, including calorie count, protein count, carbohydrate count, and lipid count. The ``keyData`` object should have the following structure:
 
-```js
+```jsx
 {
   calorieCount: PropTypes.number,
   proteinCount: PropTypes.number,
@@ -39,7 +39,7 @@ To customize the appearance of the ``StatsDisplay`` component, modify the ``Stat
 ## Example Data
 Here is an example of the data format that the StatsDisplay component expects:
 
-```js
+```jsx
 {
   calorieCount: 1930,
   proteinCount: 155,

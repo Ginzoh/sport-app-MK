@@ -3,8 +3,8 @@
 The ``CustomRadarChart`` component is a custom radar chart built using the Recharts library. This component accepts data and displays a radar chart with custom ticks, grid, and styling. The chart provides an intuitive visualization of multi-dimensional data.
 
 ## Props
-| Name  | Type            | Description                                                                                                  | Required |
-|-------|-----------------|--------------------------------------------------------------------------------------------------------------|----------|
+| Name  | Type             | Description                                                                                                                           | Required |
+|-------|------------------|---------------------------------------------------------------------------------------------------------------------------------------|----------|
 | dataD | Array of Objects | Data to be displayed in the radar chart. Each object in the array should have a kind property (string) and a value property (number). | Yes      |
 
 ## Usage
@@ -12,7 +12,7 @@ Here's an example of how to use the ``CustomRadarChart`` component:
 
 ```jsx
 import CustomRadarChart from './graph/CustomRadarChart';
-import { USER_PERFORMANCE } from './data/performanceData';
+import { USER_PERFORMANCE } from './data/data';
 
 const userId = 12; // Change this to the desired user ID
 const userData = USER_PERFORMANCE.find(user => user.userId === userId);
