@@ -8,10 +8,6 @@ import {
   LabelList,
 } from 'recharts';
 import './PieChart.css'
-const data = [
-  { name: 'Percentage', value: 12 },
-  { name: 'Remaining', value: 88 },
-];
 
 const CustomLabel = (props) => {
   const { viewBox, value } = props;
@@ -57,7 +53,13 @@ const CustomLabel2 = (props) => {
 };
 
 
-const CustomPieChart = () => {
+const CustomPieChart = ({ score }) => {
+  const percentage = Math.round(score * 100);
+  const remaining = 100 - percentage;
+  const data = [
+    { name: 'Percentage', value: percentage },
+    { name: 'Remaining', value: remaining },
+  ];
   return (
     <div className='pieContainer'>
       <h4 className='score'>Score</h4>

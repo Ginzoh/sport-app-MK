@@ -22,10 +22,7 @@ body {
   max-width: 1440px;
   min-width: 1024px;
   font-family: Roboto;
-  /* display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh; */
+  background-color: grey;
 }
 
 button:focus,

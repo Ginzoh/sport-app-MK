@@ -1,29 +1,29 @@
 import React from 'react';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
-const data = [
-  { name: 'Intensité', value: 80 },
-  { name: 'Vitesse', value: 60 },
-  { name: 'Force', value: 50 },
-  { name: 'Endurance', value: 90 },
-  { name: 'Energie', value: 75 },
-  { name: 'Cardio', value: 40 },
-];
-
 const CustomTick = ({ x, y, payload }) => {
   let textAnchor;
 
+  // Helper function to capitalize the first letter
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
+  // Get the capitalized value
+  const capitalizedValue = capitalizeFirstLetter(payload.value);
+
   switch (payload.value) {
-    case "Intensité":
-    case "Endurance":
+    case "cardio":
+    case "strength":
       textAnchor = "middle";
       break;
-    case "Vitesse":
-    case "Force":
+    case "energy":
+    case "endurance":
       textAnchor = "right";
       break;
-    case "Cardio":
-    case "Energie":
+
+    case "speed":
+    case "intensity":
       textAnchor = "end";
       break;
     default:
@@ -42,20 +42,24 @@ const CustomTick = ({ x, y, payload }) => {
         fontWeight="500"
         style={{ margin: "6px" }}
       >
-        {payload.value}
+        {capitalizedValue}
       </text>
     </g>
   );
 };
 
 
-
-const SimpleRadarChart = () => {
+const SimpleRadarChart = ({ dataD }) => {
   return (
-    <ResponsiveContainer width="100%" height="100%" style={{ backgroundColor: '#282D30' }}>
-      <RadarChart data={data} >
+    <ResponsiveContainer width="100%" height="81%" style={{ backgroundColor: '#282D30' }}>
+      <RadarChart
+        data={dataD}
+        style={{
+          transform: 'translate(-1%, 15%) scale(1.02)', // Adjust the translate and scale values to center and resize the chart
+        }}
+      >
         <PolarGrid stroke="#fff" radialLines={false} gridType="polygon" />
-        <PolarAngleAxis tickLine={false} dataKey="name" stroke="#fff" tick={<CustomTick />} />
+        <PolarAngleAxis tickLine={false} dataKey="kind" stroke="#fff" tick={<CustomTick />} />
         <Radar
           dataKey="value"
           stroke="rgba(255, 1, 1, 0.7)"
