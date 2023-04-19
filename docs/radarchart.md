@@ -13,22 +13,17 @@ Here's an example of how to use the ``CustomRadarChart`` component:
 
 ```jsx
 import CustomRadarChart from './graph/CustomRadarChart';
-import { USER_PERFORMANCE } from './data/data';
 
-const userId = 12; // Change this to the desired user ID
-const userData = USER_PERFORMANCE.find(user => user.userId === userId);
-const [perfValues, setperfValues] = useState([])
-const [perfKind, setperfKind] = useState({})
-setperfValues(userData.data);
-setperfKind(userData.kind);
-const transformedPerfValues = perfValues.map((item) => ({
-    ...item,
-    kind: perfKind[item.kind] || item.kind,
-  }));
+const data = [
+  { value: 80, kind: 'cardio' },
+  { value: 120, kind: 'energy' },
+  // ...
+];
+
 function App() {
   return (
     <div>
-      <CustomRadarChart dataD={transformedPerfValues} />
+      <CustomRadarChart dataD={data} />
     </div>
   );
 }
