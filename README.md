@@ -18,6 +18,7 @@ Follow these steps to set up and run the Vite React app on your local machine:
 1. Clone the repository:
 
 git clone https://github.com/Ginzoh/sport-app-MK
+
 cd sport-app-MK
 
 2. Install the dependencies:
