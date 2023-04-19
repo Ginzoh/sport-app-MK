@@ -1,7 +1,5 @@
 # Project 12 - Front-end Dashboard - Made By KRAUTH Mickael
 
-This repo contains all the source code to run the micro API for the sports analytics dashboard SportSee.
-
 # Vite React App
 
 This project is a Vite-powered React app featuring visualizations using Recharts. The app displays a variety of charts based on user data, including bar charts, line charts, pie charts, and radar charts.
