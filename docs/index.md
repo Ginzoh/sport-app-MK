@@ -38,12 +38,12 @@ Additionally, the project has two JSX files at the root: `main.jsx`, which sets 
 
 ## Getting Started
 
-# Prerequisites
+### Prerequisites
 
 - Node.js 14.x or higher
 - npm 6.x or higher (comes bundled with Node.js)
 
-# Running the project
+### Running the project
 
 Follow these steps to set up and run the Vite React app on your local machine:
 
