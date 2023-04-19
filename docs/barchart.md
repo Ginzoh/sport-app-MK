@@ -32,7 +32,7 @@ The CustomBarChart component accepts the following props:
 ### __``data``__ (required)
 An array of objects representing the data points for the bar chart. Each object must have the following properties:
 
-* ``__day__`` (string): The day of the week as a string.
+* __``day``__ (string): The day of the week as a string.
 * kilogram (number): The weight of that day in kilograms.
 * calories (number): The calories lost on that day in kcal.
 

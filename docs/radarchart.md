@@ -4,7 +4,7 @@ The ``CustomRadarChart`` component is a custom radar chart built using the Recha
 
 ## Props
  Name | Type | Description | Required 
-----------|----------|----------|----------
+----------|----------|-----------------------------------------------------------|----------|
  dataD | Array of Objects | Data to be displayed in the radar chart. Each object in the array should have a kind property (string) and a value property (number). | Yes |
 
 ## Usage
