@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
 
 const CustomTick = ({ x, y, payload }) => {
@@ -70,5 +70,15 @@ const SimpleRadarChart = ({ dataD }) => {
     </ResponsiveContainer>
   );
 };
+
+SimpleRadarChart.propTypes = {
+  dataD: PropTypes.arrayOf(
+    PropTypes.shape({
+      kind: PropTypes.string.isRequired,
+      value: PropTypes.number.isRequired,
+    })
+  ).isRequired,
+};
+
 
 export default SimpleRadarChart;

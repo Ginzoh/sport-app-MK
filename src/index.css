@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 :root {
   /* color-scheme: light dark; */
@@ -32,4 +32,42 @@ button:focus-visible {
 
 .container {
   display: flex;
+}
+
+/* Add this media query to your CSS file */
+@media (max-width: 1100px) {
+  .mainPage {
+    padding-left: 44px;
+  }
+
+  .chartsContainer {
+    width: 100%;
+  }
+
+  .chartStats {
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 95%;
+  }
+
+  .statsContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 96%;
+    margin-bottom: 50px;
+  }
+
+  .stats {
+    width: 197px;
+    height: 88px;
+    gap: 14px
+  }
+
+  .logoContainer {
+    margin-left: 15px;
+  }
+
+  .valueStat {
+    font-size: 18px;
+  }
 }

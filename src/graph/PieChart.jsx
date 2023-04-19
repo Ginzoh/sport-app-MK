@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import {
   PieChart,
   Pie,
@@ -86,6 +86,10 @@ const CustomPieChart = ({ score }) => {
       </ResponsiveContainer>
     </div>
   );
+};
+
+CustomPieChart.propTypes = {
+  score: PropTypes.number.isRequired,
 };
 
 export default CustomPieChart;

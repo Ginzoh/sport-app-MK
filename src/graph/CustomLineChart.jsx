@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import PropTypes from 'prop-types';
 import {
   LineChart,
   CartesianGrid,
@@ -62,6 +63,15 @@ const CustomLineChart = ({ data }) => {
 
     </LineChart>
   );
+};
+
+CustomLineChart.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.number.isRequired,
+      sessionLength: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
 
 export default CustomLineChart;
