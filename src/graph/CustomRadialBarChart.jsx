@@ -7,6 +7,11 @@ import {
 } from 'recharts';
 import './CustomRadialBarChart.css';
 
+/**
+ * CustomLabel component for displaying the percentage value.
+ * @param {Object} props - The properties of the CustomLabel component.
+ * @returns {JSX.Element} The CustomLabel component.
+ */
 const CustomLabel = (props) => {
   const { viewBox, value } = props;
   const { cx, cy } = viewBox;
@@ -18,6 +23,11 @@ const CustomLabel = (props) => {
   );
 };
 
+/**
+ * CustomLabel2 component for displaying "de votre objectif" text.
+ * @param {Object} props - The properties of the CustomLabel2 component.
+ * @returns {JSX.Element} The CustomLabel2 component.
+ */
 const CustomLabel2 = (props) => {
   const { viewBox } = props;
   const { cx, cy } = viewBox;
@@ -50,10 +60,17 @@ const CustomLabel2 = (props) => {
   );
 };
 
+/**
+ * CustomRadialBarChart component for displaying a radial bar chart with a custom label.
+ * @param {Object} props - The properties of the CustomRadialBarChart component.
+ * @param {number} props.score - The score value (from 0 to 1) to display as a percentage.
+ * @returns {JSX.Element} The CustomRadialBarChart component.
+ */
 const CustomRadialBarChart = ({ score }) => {
   const percentage = Math.round(score * 100);
   const data = [{ name: 'Percentage', value: percentage }];
   const endAngle = -277 + (357 * percentage) / 100;
+
   return (
     <div className="pieContainer">
       <h4 className="score">Score</h4>
