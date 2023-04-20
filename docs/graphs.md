@@ -7,5 +7,5 @@ Each chart is customized and rendered with the library `recharts` so it can disp
 1. [CustomLineChart](linegraph.md)
 2. [CustomBarChart](barchart.md)
 3. [CustomRadarChart](radarchart.md)
-4. [CustomPieChart](piechart.md)
+4. [CustomPieChart](radialbarchart.md)
 
