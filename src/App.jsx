@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css'
 import { ResponsiveContainer } from "recharts";
 import SimpleRadarChart from './graph/RadarChart';
-import CustomPieChart from './graph/PieChart';
+import CustomRadialBarChart from './graph/CustomRadialBarChart';
 import fetchData from './util/fetchData';
 import CustomLineChart from './graph/CustomLineChart';
 import StatsDisplay from './component/StatsDisplay';
@@ -110,7 +110,7 @@ function App() {
           <div className="radarContainer">
             <SimpleRadarChart dataD={transformedPerfValues} />
           </div>
-          <CustomPieChart score={score} />
+          <CustomRadialBarChart score={score} />
         </div>
         <StatsDisplay keyData={keyData} />
       </div>
