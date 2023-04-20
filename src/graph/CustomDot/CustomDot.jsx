@@ -20,9 +20,9 @@ const CustomDot = memo(
         <circle
           cx={cx}
           cy={cy}
-          r={4}
+          r={3}
           stroke={stroke}
-          strokeWidth={2}
+          strokeWidth={3}
           fill="#FFFFFF"
           onMouseOver={handleMouseOver}
           onMouseLeave={handleMouseLeave}
@@ -34,9 +34,9 @@ const CustomDot = memo(
       <circle
         cx={cx}
         cy={cy}
-        r={4}
+        r={3}
         stroke="transparent"
-        strokeWidth={2}
+        strokeWidth={3}
         fill="transparent"
         onMouseOver={handleMouseOver}
         onMouseLeave={handleMouseLeave}

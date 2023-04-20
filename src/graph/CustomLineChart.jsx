@@ -53,12 +53,13 @@ const CustomLineChart = ({ data }) => {
         </linearGradient>
       </defs>
       <Line
-        type="monotone"
+        type="basis"
         dataKey="sessionLength"
         stroke="url(#lineGradient)"
         isAnimationActive={false}
         dot={<CustomDot active={false} setActiveIndex={setActiveIndex} />}
         activeDot={<CustomDot active={true} setActiveIndex={setActiveIndex} />}
+        strokeWidth={2}
       />
 
     </LineChart>
