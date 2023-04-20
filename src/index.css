@@ -22,7 +22,6 @@ body {
   max-width: 1440px;
   min-width: 1024px;
   font-family: Roboto;
-  background-color: grey;
 }
 
 button:focus,
