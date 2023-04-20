@@ -10,9 +10,9 @@ The CustomRadialBarChart component is a custom pie chart built using the ``Recha
 
 ## Usage
 
-Here's an example of how to use the CustomPieChart component:
+Here's an example of how to use the CustomRadialBarChart component:
 ```jsx
-import CustomPieChart from './graph/CustomPieChart';
+import CustomRadialBarChart from './graph/CustomRadialBarChart';
 
 const score = 0.12; // Change this to the desired score
 
