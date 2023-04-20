@@ -29,20 +29,12 @@ h1,
 
 .tooltip {
   background: #E60000;
-  padding: '10px';
   color: #fff;
   border: none;
   text-align: center;
   outline: none;
   margin-bottom: 12px;
-}
-
-.weight {
-  padding-top: 15px;
-}
-
-.calories {
-  margin-bottom: 20px;
+  padding: 5px 7px
 }
 
 .legend {

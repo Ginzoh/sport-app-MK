@@ -67,6 +67,10 @@ const CustomLabel2 = (props) => {
  * @returns {JSX.Element} The CustomRadialBarChart component.
  */
 const CustomRadialBarChart = ({ score }) => {
+  if (score === null) {
+    return null;
+  }
+
   const percentage = Math.round(score * 100);
   const data = [{ name: 'Percentage', value: percentage }];
   const endAngle = -277 + (357 * percentage) / 100;
@@ -101,7 +105,12 @@ const CustomRadialBarChart = ({ score }) => {
 };
 
 CustomRadialBarChart.propTypes = {
-  score: PropTypes.number.isRequired,
+  score: PropTypes.number,
 };
+
+CustomRadialBarChart.defaultProps = {
+  score: null,
+};
+
 
 export default CustomRadialBarChart;
