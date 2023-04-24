@@ -31,7 +31,6 @@ function App() {
 
   useEffect(() => {
     loadData();
-    console.log(perfValues)
   }, []);
 
   async function getData(index, type) {

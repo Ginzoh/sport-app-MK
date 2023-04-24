@@ -6,6 +6,18 @@ import PropTypes from 'prop-types';
 import React from "react";
 import './StatsDisplay.css'
 
+/**
+ * StatsDisplay component displays key nutritional data in a grid format.
+ * 
+ * @component
+ * @param {Object} props - The properties for the StatsDisplay component.
+ * @param {Object} props.keyData - The nutritional data to display.
+ * @param {number} props.keyData.calorieCount - The number of calories.
+ * @param {number} props.keyData.proteinCount - The amount of protein (in grams).
+ * @param {number} props.keyData.carbohydrateCount - The amount of carbohydrates (in grams).
+ * @param {number} props.keyData.lipidCount - The amount of lipids (in grams).
+ * @returns {JSX.Element} The StatsDisplay component.
+ */
 const StatsDisplay = ({ keyData }) => {
   return (
     <div className="statsContainer">
