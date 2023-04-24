@@ -81,7 +81,7 @@ const CustomRadialBarChart = ({ score }) => {
   return (
     <div className="pieContainer">
       <h4 className="score">Score</h4>
-      {score !== null && <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
           cx="50%"
           cy="50%"
@@ -102,7 +102,7 @@ const CustomRadialBarChart = ({ score }) => {
             <LabelList position="center" content={<CustomLabel2 />} />
           </RadialBar>
         </RadialBarChart>
-      </ResponsiveContainer>}
+      </ResponsiveContainer>
     </div>
   );
 };
@@ -110,10 +110,5 @@ const CustomRadialBarChart = ({ score }) => {
 CustomRadialBarChart.propTypes = {
   score: PropTypes.number,
 };
-
-CustomRadialBarChart.defaultProps = {
-  score: null,
-};
-
 
 export default React.memo(CustomRadialBarChart);
