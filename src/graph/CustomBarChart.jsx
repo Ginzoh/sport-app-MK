@@ -1,6 +1,15 @@
 import PropTypes from 'prop-types';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Cell, Tooltip, Legend } from "recharts";
 
+/**
+ * CustomBarChart component for rendering a dual-axis bar chart.
+ * @component
+ * @param {Object[]} data - The data for the bar chart.
+ * @param {string} data[].day - The day label.
+ * @param {number} data[].kilogram - The weight in kilograms.
+ * @param {number} data[].calories - The number of calories burned.
+ * @returns {ReactElement} The rendered BarChart component.
+ */
 const CustomBarChart = ({ data }) => {
   const CustomLegend = ({ payload }) => {
     return (

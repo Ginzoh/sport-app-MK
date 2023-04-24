@@ -2,6 +2,11 @@
 import logo from "../assets/logo.png"
 import "./NavBar.css"
 
+/**
+ * NavBar component representing the top navigation bar.
+ * @component
+ * @returns {ReactElement} The rendered NavBar component.
+ */
 const NavBar = () => {
   return (
     <nav className="navDash">

@@ -4,6 +4,11 @@ import swim from "../assets/icons/swim.png"
 import bike from "../assets/icons/bike.png"
 import muscle from "../assets/icons/muscle.png"
 
+/**
+ * SecondNavBar component representing the secondary left navigation bar.
+ * @component
+ * @returns {ReactElement} The rendered SecondNavBar component.
+ */
 const SecondNavBar = () => {
   return (
     <section className="secondNav">

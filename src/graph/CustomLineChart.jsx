@@ -11,6 +11,14 @@ import {
 } from "recharts";
 import CustomDot from "./CustomDot/CustomDot";
 
+/**
+ * CustomLineChart component for rendering a line chart with a reference area on hover.
+ * @component
+ * @param {Object[]} data - The data for the line chart.
+ * @param {number} data[].day - The day index (1-7).
+ * @param {number} data[].sessionLength - The session length in minutes.
+ * @returns {ReactElement} The rendered LineChart component.
+ */
 const CustomLineChart = ({ data }) => {
   const [activeIndex, setActiveIndex] = useState(null);
   return (

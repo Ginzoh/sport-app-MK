@@ -15,6 +15,11 @@ import {
   USER_PERFORMANCE
 } from './data/data'
 
+/**
+ * Main App component.
+ * @component
+ * @returns {ReactElement} The rendered App component with all its children components.
+ */
 function App() {
   const [data, setData] = useState([]);
   const [user, setUser] = useState([]);

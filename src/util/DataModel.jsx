@@ -1,3 +1,6 @@
+/**
+ * DataModel class for formatting and managing user data.
+ */
 class DataModel {
   constructor(rawData) {
     this.rawData = rawData;
