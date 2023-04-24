@@ -155,6 +155,7 @@ ul li:first-child {
 .chartStats {
   display: flex;
   margin-top: 77px;
+  gap: 31px;
 }
 
 .stats {
