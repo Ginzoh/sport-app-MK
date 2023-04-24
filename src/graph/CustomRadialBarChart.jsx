@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import React from 'react';
 import {
   RadialBarChart,
   RadialBar,
@@ -29,6 +30,7 @@ const CustomLabel = (props) => {
  * @returns {JSX.Element} The CustomLabel2 component.
  */
 const CustomLabel2 = (props) => {
+  console.log(props)
   const { viewBox } = props;
   const { cx, cy } = viewBox;
 
@@ -67,10 +69,11 @@ const CustomLabel2 = (props) => {
  * @returns {JSX.Element} The CustomRadialBarChart component.
  */
 const CustomRadialBarChart = ({ score }) => {
+
   if (score === null) {
     return null;
   }
-
+  console.log(score)
   const percentage = Math.round(score * 100);
   const data = [{ name: 'Percentage', value: percentage }];
   const endAngle = -277 + (357 * percentage) / 100;
@@ -78,7 +81,7 @@ const CustomRadialBarChart = ({ score }) => {
   return (
     <div className="pieContainer">
       <h4 className="score">Score</h4>
-      <ResponsiveContainer width="100%" height="100%">
+      {score !== null && <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
           cx="50%"
           cy="50%"
@@ -95,11 +98,11 @@ const CustomRadialBarChart = ({ score }) => {
             cornerRadius={7}
             fill="#FF0000"
           >
-            <LabelList width={30} position="center" content={<CustomLabel />} value={percentage} />
+            <LabelList width={30} position="center" content={<CustomLabel value={percentage} />} />
             <LabelList position="center" content={<CustomLabel2 />} />
           </RadialBar>
         </RadialBarChart>
-      </ResponsiveContainer>
+      </ResponsiveContainer>}
     </div>
   );
 };
@@ -113,4 +116,4 @@ CustomRadialBarChart.defaultProps = {
 };
 
 
-export default CustomRadialBarChart;
+export default React.memo(CustomRadialBarChart);

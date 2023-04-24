@@ -28,6 +28,7 @@ function App() {
   const [session, setSession] = useState([]);
   const [perfValues, setperfValues] = useState([])
   const [perfKind, setperfKind] = useState({})
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     loadData();
@@ -80,6 +81,7 @@ function App() {
       setperfKind(perfDataRaw.kind);
       setperfValues(perfDataRaw.data);
     }
+    setLoading(false);
   }
 
   const transformedPerfValues = perfValues.map((item) => ({
@@ -92,30 +94,34 @@ function App() {
       <h1 className="bonjour">Bonjour <span className="firstName">{user.firstName}</span></h1>
       <p className="bravo">Félicitation ! Vous avez explosé vos objectifs hier 👏</p>
       <div className="chartStats">
-        <div className="chartsContainer">
-          <div className="BarContainer">
-            <ResponsiveContainer width="100%" height="100%">
-              <CustomBarChart data={data} />
-            </ResponsiveContainer>
-          </div>
-          <div className="lineContainer">
-
-            <h3 className="lineTitle">
-              <span className="lineTitlePart">Durée moyenne des</span>
-              <span className="lineTitlePart">sessions</span>
-            </h3>
-
-            <div className="responsiveLineChartContainer">
+        {!loading ? (
+          <div className="chartsContainer">
+            <div className="BarContainer">
               <ResponsiveContainer width="100%" height="100%">
-                <CustomLineChart data={session} />
+                <CustomBarChart data={data} />
               </ResponsiveContainer>
             </div>
+            <div className="lineContainer">
+
+              <h3 className="lineTitle">
+                <span className="lineTitlePart">Durée moyenne des</span>
+                <span className="lineTitlePart">sessions</span>
+              </h3>
+
+              <div className="responsiveLineChartContainer">
+                <ResponsiveContainer width="100%" height="100%">
+                  <CustomLineChart data={session} />
+                </ResponsiveContainer>
+              </div>
+            </div>
+            <div className="radarContainer">
+              <SimpleRadarChart dataD={transformedPerfValues} />
+            </div>
+            <CustomRadialBarChart score={score} />
           </div>
-          <div className="radarContainer">
-            <SimpleRadarChart dataD={transformedPerfValues} />
-          </div>
-          <CustomRadialBarChart score={score} />
-        </div>
+        ) : (
+          <p>Loading...</p>
+        )}
         <StatsDisplay keyData={keyData} />
       </div>
     </section>
