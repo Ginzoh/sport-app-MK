@@ -148,7 +148,7 @@ ul li:first-child {
 .chartsContainer {
   display: flex;
   flex-wrap: wrap;
-  width: 71%;
+  width: 75%;
   gap: 30px;
 }
 
@@ -173,4 +173,5 @@ ul li:first-child {
   display: flex;
   gap: 39px;
   flex-direction: column;
+  width: 30%;
 }
