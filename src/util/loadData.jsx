@@ -1,5 +1,20 @@
 import DataModel from "./DataModel";
 
+/**
+ * Loads the data for a specific user, formats the data using the DataModel class, and updates the corresponding state variables.
+ *
+ * @param {function} getData - The getData function for fetching data.
+ * @param {Object} setStates - An object containing the setState functions for updating the state variables.
+ * @param {function} setStates.setData - The setData function for updating the activity data state.
+ * @param {function} setStates.setUser - The setUser function for updating the user data state.
+ * @param {function} setStates.setScore - The setScore function for updating the score data state.
+ * @param {function} setStates.setKeyData - The setKeyData function for updating the key data state.
+ * @param {function} setStates.setSession - The setSession function for updating the average sessions data state.
+ * @param {function} setStates.setperfKind - The setperfKind function for updating the performance kind data state.
+ * @param {function} setStates.setperfValues - The setperfValues function for updating the performance values data state.
+ * @param {function} setStates.setLoading - The setLoading function for updating the loading state.
+ * @returns {Promise<void>} A promise that resolves when all data is loaded and states are updated.
+ */
 async function loadData(getData, setStates) {
   const {
     setData,
