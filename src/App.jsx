@@ -3,17 +3,11 @@ import './App.css'
 import { ResponsiveContainer } from "recharts";
 import SimpleRadarChart from './graph/RadarChart';
 import CustomRadialBarChart from './graph/CustomRadialBarChart';
-import fetchData from './util/fetchData';
 import CustomLineChart from './graph/CustomLineChart';
 import StatsDisplay from './component/StatsDisplay';
 import CustomBarChart from './graph/CustomBarChart';
-import DataModel from './util/DataModel';
-import {
-  USER_MAIN_DATA,
-  USER_ACTIVITY,
-  USER_AVERAGE_SESSIONS,
-  USER_PERFORMANCE
-} from './data/data'
+import loadData from './util/LoadData';
+import getData from './util/getData';
 
 /**
  * Main App component.
@@ -31,58 +25,17 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    loadData();
+    loadData(getData, {
+      setData,
+      setUser,
+      setScore,
+      setKeyData,
+      setSession,
+      setperfKind,
+      setperfValues,
+      setLoading,
+    });
   }, []);
-
-  async function getData(index, type) {
-    if (import.meta.env.VITE_REACT_APP_MOCK === 'FALSE') {
-      return await fetchData(index, type);
-    } else {
-      switch (type) {
-        case "activity":
-          return USER_ACTIVITY[0];
-        case "average-sessions":
-          return USER_AVERAGE_SESSIONS[0];
-        case "performance":
-          return USER_PERFORMANCE[0];
-        default:
-          return USER_MAIN_DATA[0];
-      }
-    }
-  }
-
-  async function loadData() {
-    const actDataRaw = await getData(12, "activity");
-    const userDataRaw = await getData(12);
-    const avgSessionDataRaw = await getData(12, "average-sessions");
-    const perfDataRaw = await getData(12, "performance");
-
-    if (import.meta.env.VITE_REACT_APP_MOCK === 'FALSE') {
-      const actDataModel = new DataModel(actDataRaw);
-      setData(actDataModel.formatActivityData().sessions);
-
-      const userDataModel = new DataModel(userDataRaw);
-      setUser(userDataModel.formatUserMainData().userInfos);
-      setScore(userDataModel.formatUserMainData().todayScore);
-      setKeyData(userDataModel.formatUserMainData().keyData);
-      const avgSessionDataModel = new DataModel(avgSessionDataRaw);
-      setSession(avgSessionDataModel.formatAverageSessionsData().sessions);
-
-      const perfDataModel = new DataModel(perfDataRaw);
-      setperfKind(perfDataModel.formatPerformanceData().kind);
-      setperfValues(perfDataModel.formatPerformanceData().data);
-
-    } else {
-      setData(actDataRaw.sessions);
-      setUser(userDataRaw.userInfos);
-      setScore(userDataRaw.todayScore);
-      setKeyData(userDataRaw.keyData);
-      setSession(avgSessionDataRaw.sessions);
-      setperfKind(perfDataRaw.kind);
-      setperfValues(perfDataRaw.data);
-    }
-    setLoading(false);
-  }
 
   const transformedPerfValues = perfValues.map((item) => ({
     ...item,
