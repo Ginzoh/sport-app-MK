@@ -72,7 +72,6 @@ const CustomRadialBarChart = ({ score }) => {
   const percentage = Math.round(score * 100);
   const data = [{ name: 'Percentage', value: percentage }];
   const endAngle = -277 + (357 * percentage) / 100;
-
   return (
     <div className="pieContainer">
       <h4 className="score">Score</h4>
@@ -86,6 +85,17 @@ const CustomRadialBarChart = ({ score }) => {
           startAngle={-277}
           endAngle={endAngle}
         >
+          <foreignObject x="45" y="45" width="170" height="170">
+            <div
+              xmlns="http://www.w3.org/1999/xhtml"
+              style={{
+                borderRadius: '50%',
+                width: '100%',
+                height: '100%',
+                backgroundColor: '#FFF',
+              }}
+            ></div>
+          </foreignObject>
           <RadialBar
             minAngle={15}
             endAngle={endAngle}
@@ -101,6 +111,7 @@ const CustomRadialBarChart = ({ score }) => {
     </div>
   );
 };
+
 
 CustomRadialBarChart.propTypes = {
   score: PropTypes.number,

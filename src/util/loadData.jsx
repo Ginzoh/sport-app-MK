@@ -15,7 +15,7 @@ import DataModel from "./DataModel";
  * @param {function} setStates.setLoading - The setLoading function for updating the loading state.
  * @returns {Promise<void>} A promise that resolves when all data is loaded and states are updated.
  */
-async function loadData(getData, setStates) {
+async function loadData(userId, getData, setStates) {
   const {
     setData,
     setUser,
@@ -26,11 +26,10 @@ async function loadData(getData, setStates) {
     setperfValues,
     setLoading,
   } = setStates;
-
-  const actDataRaw = await getData(12, "activity");
-  const userDataRaw = await getData(12);
-  const avgSessionDataRaw = await getData(12, "average-sessions");
-  const perfDataRaw = await getData(12, "performance");
+  const actDataRaw = await getData(userId, "activity");
+  const userDataRaw = await getData(userId);
+  const avgSessionDataRaw = await getData(userId, "average-sessions");
+  const perfDataRaw = await getData(userId, "performance");
 
   if (import.meta.env.VITE_REACT_APP_MOCK === 'FALSE') {
     const actDataModel = new DataModel(actDataRaw);
@@ -46,11 +45,12 @@ async function loadData(getData, setStates) {
     const perfDataModel = new DataModel(perfDataRaw);
     setperfKind(perfDataModel.formatPerformanceData().kind);
     setperfValues(perfDataModel.formatPerformanceData().data);
-
   } else {
     setData(actDataRaw.sessions);
     setUser(userDataRaw.userInfos);
-    setScore(userDataRaw.todayScore);
+    console.log(userDataRaw)
+    if (userDataRaw.score) setScore(userDataRaw.score);
+    else setScore(userDataRaw.todayScore);
     setKeyData(userDataRaw.keyData);
     setSession(avgSessionDataRaw.sessions);
     setperfKind(perfDataRaw.kind);

@@ -19,15 +19,17 @@ async function getData(index, type) {
   if (import.meta.env.VITE_REACT_APP_MOCK === 'FALSE') {
     return await fetchData(index, type);
   } else {
+    let i = 0;
+    if (index === 18) i = 1;
     switch (type) {
       case "activity":
-        return USER_ACTIVITY[0];
+        return USER_ACTIVITY[i];
       case "average-sessions":
-        return USER_AVERAGE_SESSIONS[0];
+        return USER_AVERAGE_SESSIONS[i];
       case "performance":
-        return USER_PERFORMANCE[0];
+        return USER_PERFORMANCE[i];
       default:
-        return USER_MAIN_DATA[0];
+        return USER_MAIN_DATA[i];
     }
   }
 }

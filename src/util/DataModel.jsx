@@ -7,7 +7,10 @@ class DataModel {
   }
 
   formatUserMainData() {
-    const { id, userInfos, todayScore, keyData } = this.rawData;
+    const { id, userInfos, keyData } = this.rawData;
+    const { score, todayScore } = this.rawData;
+    const finalScore = todayScore || score;
+
     return {
       id,
       userInfos: {
@@ -15,7 +18,7 @@ class DataModel {
         lastName: userInfos.lastName,
         age: userInfos.age,
       },
-      todayScore,
+      todayScore: finalScore,
       keyData: {
         calorieCount: keyData.calorieCount,
         proteinCount: keyData.proteinCount,
@@ -24,6 +27,7 @@ class DataModel {
       },
     };
   }
+
 
   formatActivityData() {
     const { userId, sessions } = this.rawData;

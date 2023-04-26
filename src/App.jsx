@@ -8,7 +8,6 @@ import StatsDisplay from './component/StatsDisplay';
 import CustomBarChart from './graph/CustomBarChart';
 import loadData from './util/LoadData';
 import getData from './util/getData';
-
 /**
  * Main App component.
  * @component
@@ -23,19 +22,26 @@ function App() {
   const [perfValues, setperfValues] = useState([])
   const [perfKind, setperfKind] = useState({})
   const [loading, setLoading] = useState(true);
+  const [userId, setUserId] = useState(null);
 
   useEffect(() => {
-    loadData(getData, {
-      setData,
-      setUser,
-      setScore,
-      setKeyData,
-      setSession,
-      setperfKind,
-      setperfValues,
-      setLoading,
-    });
+    setUserId(18);
   }, []);
+
+  useEffect(() => {
+    if (userId !== null) {
+      loadData(userId, getData, {
+        setData,
+        setUser,
+        setScore,
+        setKeyData,
+        setSession,
+        setperfKind,
+        setperfValues,
+        setLoading,
+      });
+    }
+  }, [userId]);
 
   const transformedPerfValues = perfValues.map((item) => ({
     ...item,
